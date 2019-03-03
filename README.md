@@ -1,6 +1,6 @@
-# pxt-arcade-image-transform
+# MakeCode Arcade Image Transforms
 
-
+Extension providing image transformations in MakeCode Arcade.
 
 ## TODO
 
@@ -11,11 +11,11 @@
 - [ ] Use "pxt bump" to create a tagged release on GitHub
 - [ ] Get your package reviewed and approved https://arcade.makecode.com/packages/approval
 
-Read more at https://arcade.makecode.com/packages/build-your-own
+Read more about building MakeCode extensions at https://arcade.makecode.com/packages/build-your-own
 
 ## License
 
-
+MIT License. See LICENSE for more information.
 
 ## Supported targets
 

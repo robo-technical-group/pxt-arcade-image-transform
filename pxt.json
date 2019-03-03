@@ -7,11 +7,11 @@
     },
     "files": [
         "README.md",
-        "main.ts"
+        "main.ts",
+        "image-transform.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
-    "public": false,
-    "additionalFilePaths": []
+    "public": false
 }
