@@ -241,7 +241,7 @@ namespace transformSprites {
     // Implementation of Scale2X variation of Eric's Pixel Expansion (EPX) algorithm.
     //% blockId=transform_scale2x
     //% block="double size of|image %original"
-    function scale2x(original: Image): Image {
+    export function scale2x(original: Image): Image {
         // Double the size of the original.
         let toReturn: Image = image.create(original.width << 1, original.height << 1);
 
@@ -298,7 +298,7 @@ namespace transformSprites {
     // Implementation of Scale3X derivation of EPX algorithm.
     //% blockId=transform_scale3x
     //% block="triple size of|image %original"
-    function scale3x(original: Image): Image {
+    export function scale3x(original: Image): Image {
         let toReturn: Image = image.create(original.width * 3, original.height * 3);
 
         for (let x: number = 0; x < original.width; x++) {
