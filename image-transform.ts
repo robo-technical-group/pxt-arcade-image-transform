@@ -298,7 +298,7 @@ namespace transformSprites {
      * @param {Image} original - Image to scale.
      * @return {Image} - Image with size tripled.
      */
-    function scale3x(original: Image): Image {
+    export function scale3x(original: Image): Image {
         let toReturn: Image = image.create(original.width * 3, original.height * 3);
 
         for (let x: number = 0; x < original.width; x++) {
