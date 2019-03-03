@@ -293,12 +293,12 @@ namespace transformSprites {
     }   // scale2x()
 
     /**
+     * Implementation of Scale3X derivation of EPX algorithm.
      * Smoothly triples the size of an image.
+     * @param {Image} original - Image to scale.
+     * @return {Image} - Image with size tripled.
      */
-    // Implementation of Scale3X derivation of EPX algorithm.
-    //% blockId=transform_scale3x
-    //% block="triple size of|image %original"
-    export function scale3x(original: Image): Image {
+    function scale3x(original: Image): Image {
         let toReturn: Image = image.create(original.width * 3, original.height * 3);
 
         for (let x: number = 0; x < original.width; x++) {
