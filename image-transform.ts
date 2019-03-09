@@ -151,7 +151,7 @@ namespace transformSprites {
      * Positive change rotates clockwise; negative change rotates counterclockwise.
      */
     //% blockId=transform_change_rotation
-    //% block="change rotation of %sprite by %angleChange degrees"
+    //% block="change rotation of %sprite(mySprite) by %angleChange degrees"
     //% sprite.defl=mySprite angleChange.defl=0
     export function changeRotation(sprite: Sprite, angleChange: number): void {
         if (!_spritesWithRotations[sprite.id]) {
@@ -165,7 +165,7 @@ namespace transformSprites {
      * Get the current rotation angle for a sprite in degrees.
      */
     //% blockId=transform_get_rotation
-    //% block="%sprite rotation"
+    //% block="%sprite(mySprite) rotation"
     //% sprite.defl=mySprite
     export function getRotation(sprite: Sprite): number {
         if (!_spritesWithRotations[sprite.id]) {
@@ -182,7 +182,7 @@ namespace transformSprites {
      * Positive change rotates clockwise; negative change rotates counterclockwise.
      */
     //% blockId=transform_rotate_sprite
-    //% block="set rotation of %sprite to %angle degrees"
+    //% block="set rotation of %sprite(mySprite) to %angle degrees"
     //% sprite.defl=mySprite angle.defl=0
     export function rotateSprite(sprite: Sprite, angle: number): void {
         if (!_spritesWithRotations[sprite.id]) {
@@ -280,7 +280,7 @@ namespace transformSprites {
      */
     // Implementation of Scale2X variation of Eric's Pixel Expansion (EPX) algorithm.
     //% blockId=transform_scale2x
-    //% block="double size of|image %original"
+    //% block="double size of|image %original=screen_image_picker"
     export function scale2x(original: Image): Image {
         // Double the size of the original.
         let toReturn: Image = image.create(original.width << 1, original.height << 1);
