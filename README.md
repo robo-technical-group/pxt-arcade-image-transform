@@ -8,9 +8,8 @@ Extension providing image transformations in MakeCode Arcade.
 - [X] Include translations for 90, 180, and 270 degrees (added in version 1.0.4).
 - [X] Add tests (added in version 1.0.4).
 - [ ] Add "icon.png" image (300x200) in the root folder
-- [ ] Add "- beta" to the GitHub project description if you are still iterating it.
 - [ ] Turn on your automated build on https://travis-ci.org
-- [ ] Use "pxt bump" to create a tagged release on GitHub
+- [X] Use "pxt bump" to create a tagged release on GitHub
 - [ ] Get your package reviewed and approved https://arcade.makecode.com/packages/approval
 
 Read more about building MakeCode extensions at https://arcade.makecode.com/packages/build-your-own
