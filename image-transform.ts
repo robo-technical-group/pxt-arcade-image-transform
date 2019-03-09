@@ -29,7 +29,7 @@ namespace transformSprites {
         constructor(sprite: Sprite, angle: number = 0) {
             this._spriteId = sprite.id;
             this._currRotation = angle;
-            this._origImage = sprite.image;
+            this._origImage = sprite.image.clone();
             this._scaledImage = scale2x(sprite.image);
         }   // constructor()
 
@@ -201,15 +201,55 @@ namespace transformSprites {
      * @return {Image} Sprite's rotated image.
      */
     function rotate(sprite: SpriteWithRotation, angle: number): Image {
-        if (angle % 360 == 0) {
-            return sprite.image;
-        }   // if ( ! angle )
-        let toReturn: Image = image.create(sprite.image.width, sprite.image.height);
+        // Normalize angle.
+        angle %= 360;
+        if (angle < 0) {
+            angle += 360;
+        }   // if (angle < 0)
+
+        // Reflections not needing actual rotation.
+        let toReturn: Image = null;
+        let x: number = 0;
+        let y: number = 0;
+        switch (angle) {
+            case 0:
+                return sprite.image.clone();
+            case 90:
+                toReturn = image.create(sprite.image.height, sprite.image.width);
+                for (x = 0; x < toReturn.width; x++) {
+                    for (y = 0; y < toReturn.height; y++) {
+                        toReturn.setPixel(x, y,
+                            sprite.image.getPixel(y, sprite.image.width - x));
+                    }   // for ( y )
+                }   // for ( x )
+                return toReturn;
+            case 180:
+                toReturn = image.create(sprite.image.height, sprite.image.width);
+                for (x = 0; x < toReturn.width; x++) {
+                    for (y = 0; y < toReturn.height; y++) {
+                        toReturn.setPixel(x, y,
+                            sprite.image.getPixel(sprite.image.width - x, sprite.image.height - y));
+                    }   // for ( y )
+                }   // for ( x )
+                return toReturn;
+            case 270:
+                toReturn = image.create(sprite.image.height, sprite.image.width);
+                for (x = 0; x < toReturn.width; x++) {
+                    for (y = 0; y < toReturn.height; y++) {
+                        toReturn.setPixel(x, y,
+                            sprite.image.getPixel(sprite.image.height - y, x));
+                    }   // for ( y )
+                }   // for ( x )
+                return toReturn;
+        }   // switch (angle)
+
+
+        toReturn = image.create(sprite.image.width, sprite.image.height);
         const rads: number = Math.PI * angle / 180;
         let center: Coordinate = new Coordinate(toReturn.width >> 1, toReturn.height >> 1);
 
-        for (let x: number = 0; x < toReturn.width; x++) {
-            for (let y: number = 0; y < toReturn.height; y++) {
+        for (x = 0; x < toReturn.width; x++) {
+            for (y = 0; y < toReturn.height; y++) {
                 let currVector: Vector = new Vector(
                     Math.sqrt((x - center.x) ** 2 + (y - center.y) ** 2),
                     Math.atan2(y - center.y, x - center.x)

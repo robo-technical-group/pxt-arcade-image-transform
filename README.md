@@ -4,7 +4,9 @@ Extension providing image transformations in MakeCode Arcade.
 
 ## TODO
 
-- [ ] Add a reference for your blocks here
+- [X] See it in action at https://arcade.makecode.com/27800-70465-05726-62974
+- [X] Include translations for 90, 180, and 270 degrees (added in version 1.0.4).
+- [X] Add tests (added in version 1.0.4).
 - [ ] Add "icon.png" image (300x200) in the root folder
 - [ ] Add "- beta" to the GitHub project description if you are still iterating it.
 - [ ] Turn on your automated build on https://travis-ci.org
