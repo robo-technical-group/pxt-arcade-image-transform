@@ -152,7 +152,7 @@ namespace transformSprites {
      */
     //% blockId=transform_change_rotation
     //% block="change rotation of %sprite(mySprite) by %angleChange degrees"
-    //% sprite.defl=mySprite angleChange.defl=0
+    //% sprite.shadow="variables_get" angleChange.defl=0
     export function changeRotation(sprite: Sprite, angleChange: number): void {
         if (!_spritesWithRotations[sprite.id]) {
             _spritesWithRotations[sprite.id] = new SpriteWithRotation(sprite, 0);
@@ -166,7 +166,7 @@ namespace transformSprites {
      */
     //% blockId=transform_get_rotation
     //% block="%sprite(mySprite) rotation"
-    //% sprite.defl=mySprite
+    //% sprite.shadow="variables_get"
     export function getRotation(sprite: Sprite): number {
         if (!_spritesWithRotations[sprite.id]) {
             return 0;
@@ -183,7 +183,7 @@ namespace transformSprites {
      */
     //% blockId=transform_rotate_sprite
     //% block="set rotation of %sprite(mySprite) to %angle degrees"
-    //% sprite.defl=mySprite angle.defl=0
+    //% sprite.shadow="variables_get" angle.defl=0
     export function rotateSprite(sprite: Sprite, angle: number): void {
         if (!_spritesWithRotations[sprite.id]) {
             _spritesWithRotations[sprite.id] = new SpriteWithRotation(sprite, 0);
