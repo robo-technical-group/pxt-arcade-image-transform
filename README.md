@@ -1,5 +1,7 @@
 # MakeCode Arcade Image Transforms
 
+[![Build Status](https://travis-ci.com/robo-technical-group/pxt-arcade-image-transform.svg?branch=master)](https://travis-ci.com/robo-technical-group/pxt-arcade-image-transform)
+
 Extension providing image transformations in MakeCode Arcade.
 
 ## TODO
