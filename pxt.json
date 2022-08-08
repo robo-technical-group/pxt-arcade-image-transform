@@ -13,5 +13,13 @@
     "testFiles": [
         "test.ts"
     ],
-    "public": false
+    "public": false,
+    "targetVersions": {
+        "target": "1.8.30",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "tsprj"
 }
